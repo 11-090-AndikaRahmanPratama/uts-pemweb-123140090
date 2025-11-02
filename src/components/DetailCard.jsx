@@ -85,6 +85,13 @@ export default function DetailCard({
           </div>
         )}
 
+        {film.Writer && film.Writer !== "N/A" && (
+          <div className="detail-section">
+            <h3>Writer</h3>
+            <p>{film.Writer}</p>
+          </div>
+        )}
+
         {film.Production && film.Production !== "N/A" && (
           <div className="detail-section">
             <h3>Production</h3>
@@ -92,6 +99,19 @@ export default function DetailCard({
           </div>
         )}
 
+        <div className="detail-actions">
+          <button
+            className={`detail-favorite-btn ${isFavorite ? "active" : ""}`}
+            onClick={onToggleFavorite}
+          >
+            {isFavorite
+              ? "Hapus dari daftar favoritmu"
+              : "Tambah ke daftar favoritmu"}
+          </button>
+          <button className="detail-close-btn" onClick={onClose}>
+            Keluar
+          </button>
+        </div>
       </div>
     </div>
   );
