@@ -2,6 +2,15 @@
 
 import { useState } from "react";
 
+export default function SearchForm({ onSearch }) {
+  const [filters, setFilters] = useState({
+    title: "",
+    year: "",
+    type: "movie",
+    minRating: "",
+    releaseStatus: "any",
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({
@@ -47,6 +56,7 @@ import { useState } from "react";
             name="year"
             value={filters.year}
             onChange={handleChange}
+            placeholder="Masukkan tahun rilis"
             min="1800"
             max={new Date().getFullYear()}
           />
@@ -74,6 +84,7 @@ import { useState } from "react";
             name="minRating"
             value={filters.minRating}
             onChange={handleChange}
+            placeholder="7.5"
             min="0"
             max="10"
             step="0.1"
