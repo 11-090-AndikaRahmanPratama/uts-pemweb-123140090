@@ -21,8 +21,8 @@ export default function Header({
           }}
         >
           {showFavorites
-            ? "← Kembali ke Halaman awal"
-            : `Daftar Favorit (${favoritesCount})`}
+            ? "← Kembali ke Pencarian"
+            : `Favorit (${favoritesCount})`}
         </button>
       </div>
     </header>
