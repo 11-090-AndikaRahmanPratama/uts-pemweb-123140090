@@ -109,7 +109,7 @@ export default function DetailCard({
               : "Tambah ke daftar favoritmu"}
           </button>
           <button className="detail-close-btn" onClick={onClose}>
-            Keluar
+            Tutup
           </button>
         </div>
       </div>
