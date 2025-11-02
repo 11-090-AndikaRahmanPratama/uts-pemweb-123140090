@@ -31,6 +31,29 @@ export default function DataTable({
                 "🎬"
               )}
             </div>
+            <div className="film-info">
+              <div className="film-title">{film.Title}</div>
+              <div className="film-year">{film.Year}</div>
+              <div className="film-type">{film.Type}</div>
+              <div className="film-actions">
+                <button
+                  className={`favorite-btn ${
+                    isFavorite(film.imdbID) ? "active" : ""
+                  }`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleFavorite(film);
+                  }}
+                  title={
+                    isFavorite(film.imdbID)
+                      ? "Hapus dari daftar favoritmu"
+                      : "Tambah ke daftar favoritmu"
+                  }
+                >
+                  {isFavorite(film.imdbID)
+                    ? "Hapus dari daftar favoritmu"
+                    : "Tambah ke daftar favoritmu"}
+                </button>
               </div>
             </div>
           </div>
